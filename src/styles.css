@@ -1,0 +1,304 @@
+:root {
+    --bg-color: #233464; /* Darkest Blue */
+    --light-blue: #84ABE6; /* Lightest Blue */
+    --bright-yellow: #FBD585; /* Bright Yellow*/
+    --hover-bright-yellow: #fef2da;
+    --dark-purple: #445584; /* Dark Purple */
+    --medium-blue: #6d8dc6; /* Medium Blue */
+    --light-purple: #94ADF1;
+    --pink: #FFB6C1;
+  }
+
+@font-face {
+    font-family: 'Modak';
+    src: url('assets/Modak-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Mochiy Pop One';
+    src: url('assets/MochiyPopOne-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Kiwi Maru';
+    src: url('assets/KiwiMaru-Regular.ttf');
+}
+
+.fullName {
+    color: white;
+    font-family: 'Modak';
+    font-size: calc(2rem + 2vw);
+    letter-spacing: .3rem;
+}
+
+.tag {
+    font-family: 'Mochiy Pop One';
+    font-size: calc((2rem + 2vw) * 0.4);
+    color: white;
+    letter-spacing: .1rem;
+}
+
+.banner {
+    display: flex;
+    flex-direction: column; 
+    position: relative;
+    width: 100%;
+    height: 50vh; 
+    background-color: var(--bg-color);
+}
+  
+.banner-bg {
+    flex: 1;
+}
+
+.top-border {
+    border-top: 40px solid var(--light-blue);
+}
+
+.custom-shape-divider-top-1723951671 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1723951671 svg {
+    position: relative;
+    display: block;
+    width: calc(121% + 1.3px);
+    height: 18vh;
+}
+
+.custom-shape-divider-top-1723951671 .shape-fill {
+    fill: var(--light-blue);
+}
+
+.banner-info {
+    height: 50vh;
+}
+
+.info, .profile-container{
+    height: 50%;
+    width: 100%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.linkedin, .github, .mail {
+    stroke: var(--light-purple);
+    transition: stroke 0.3s ease;
+}
+
+.linkedin:hover, .github:hover, .mail:hover {
+    stroke: var(--medium-blue);
+}
+
+.profile-pic {
+    border-radius: 50%;
+    height: 100%;
+    border: 8px solid white;
+}
+
+.about-me {
+    position: relative;
+    background-color: var(--medium-blue);
+}
+
+.tech-skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.tech-skills .container {
+    width: 80%;
+    height: 100%;
+    background-color: var(--bright-yellow);
+    border-radius: 20%;
+}
+
+.about-me h1 {
+    font-family: 'Mochiy Pop One';
+    color: white;
+}
+
+.about-me p {
+    color: white;
+    font-size: 1.05rem;
+    font-family: 'Kiwi Maru';
+}
+
+.about-me a {
+    color: var(--bright-yellow);
+    text-decoration: none;
+    font-family: 'Kiwi Maru';
+    position: relative;
+    font-size: 1.3rem;
+    transition: color 0.3s ease;
+}
+
+.about-me a:hover, .about-me a:hover .arrow-right {
+    color: var(--hover-bright-yellow);
+    fill: var(--hover-bright-yellow);
+}
+
+.tech-skills p {
+    font-family: 'Mochiy Pop One';
+    color: var(--dark-purple);
+    font-size: 1.05rem;
+}
+
+.tech-skills p:hover {
+    color: var(--light-purple);
+}
+
+.learn-more-container {
+    position: relative;
+    background-color: var(--dark-purple);
+    border-radius: 30px;
+    height: 100%;
+    width: 90%;
+    padding: 20px; 
+}
+
+.learn-more {
+    background-color: var(--medium-blue);
+    padding: 30px;
+}
+
+.learn-more-divider {
+    width: 20%; 
+    height: 6px; 
+    background-color: var(--bright-yellow); 
+    margin: 30px auto; 
+}
+
+.learn-more h1 {
+    font-family: 'Mochiy Pop One';
+    color: white;
+    font-size: 32px;
+    margin-top: 30px;
+}
+
+.learn-more p {
+    font-family: 'Kiwi Maru';
+    color: white;
+    width: 60%;
+}
+
+.orgs {
+    color: var(--pink)
+}
+
+.arrow-left {
+    stroke: var(--bright-yellow);
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    transition: stroke 0.3s ease;
+}
+
+.arrow-left:hover {
+    stroke: var(--hover-bright-yellow);
+}
+
+.projects .container .row-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap:15px;
+}
+
+.my-projects {
+    font-family: 'Mochiy Pop One';
+    color: var(--dark-purple);
+    font-size: 1.7rem;
+}
+
+.project-card {
+    color: white;
+    background-color: var(--dark-purple);
+    border-radius: 10%;
+    height: 100%;
+    width: 100%;
+    padding: 20px; 
+    box-sizing: border-box;
+    aspect-ratio: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-card h1 {
+    font-family: 'Mochiy Pop One';
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+}
+
+.project-card a {
+    color: var(--bright-yellow);
+    text-decoration: none;
+    font-family: 'Kiwi Maru';
+    position: relative;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.project-card a:hover, .project-card a:hover .arrow-right {
+    color: var(--hover-bright-yellow);
+    fill: var(--hover-bright-yellow);
+}
+
+.project-card p {
+    font-family: 'Kiwi Maru';
+    width: 100%;
+}
+
+.arrow-right {
+    margin-bottom: 3px;
+    fill: var(--bright-yellow);
+    transition: fill 0.3s ease;
+}
+  
+.divider {
+    width: 50%; 
+    height: 6px; 
+    background-color: var(--dark-purple); 
+    margin: 50px auto 20px auto; 
+}
+
+.footer, .footer p {
+    background-color: var(--bg-color);
+    color: var(--light-purple);
+    font-family: 'Mochiy Pop One';
+}
+  
+
+@media (max-width: 767px) {
+    .learn-more-container {
+        width: 100%;
+    }
+
+    .learn-more h1 {
+        font-size: 24px;
+        margin-top: 50px;
+    }
+
+    .learn-more p {
+      width: 100%;
+    }
+
+    .custom-shape-divider-top-1723951671 svg {
+        position: relative;
+        display: block;
+        width: calc(121% + 1.3px);
+        height: 60px;
+    }
+}
