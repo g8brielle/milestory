@@ -132,14 +132,6 @@
     gap: 2rem;
 }
 
-.month-checkbox {
-    width: 50px;          
-    height: 50px;
-    border-radius: 50%; 
-    border: solid 1px white;
-    cursor: pointer;
-}
-
 .month-box {
     cursor: pointer;
     font-family: 'Arvo';
@@ -204,18 +196,17 @@
     stroke: var(--light-green);
 }
 
-.projects .container .row-container {
+.milestones .container .row-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     gap:15px;
 }
 
-.project-card {
-    color: white;
-    background-color: var(--dark-purple);
+.milestone-card {
+    background-color: white;
     border-radius: 10%;
-    height: 100%;
-    width: 100%;
+    height: clamp(280px, 20vw, 330px);
+    width: clamp(280px, 20vw, 330px);
     padding: 20px; 
     box-sizing: border-box;
     aspect-ratio: 1; 
@@ -224,27 +215,17 @@
     align-items: center;
 }
 
-.project-card h1 {
+.milestone-card h1 {
+    border: solid 1px var(--navy-blue);
+    padding: 10px; 
+    color: var(--navy-blue);
     font-family: 'Arvo';
-    font-size: 1.5rem;
-    margin-bottom: 40px;
+    font-size: 16px;
+    margin-bottom: 20px;
 }
 
-.project-card a {
-    color: var(--bright-yellow);
-    text-decoration: none;
-    font-family: 'Arvo';
-    position: relative;
-    font-size: 18px;
-    transition: color 0.3s ease;
-}
-
-.project-card a:hover, .project-card a:hover .arrow-right {
-    color: var(--hover-bright-yellow);
-    fill: var(--hover-bright-yellow);
-}
-
-.project-card p {
+.milestone-card p {
+    color: var(--navy-blue);
     font-family: 'Arvo';
     width: 100%;
 }
