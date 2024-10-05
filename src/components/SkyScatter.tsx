@@ -1,22 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react';
-import pink_big_star from '../assets/pink_star_big.svg';
-import pink_little_star from '../assets/pink_star_little.svg';
-import yellow_big_star from '../assets/yellow_star_big.svg';
-import yellow_little_star from '../assets/yellow_star_little.svg';
-import blue_big_star from '../assets/blue_star_big.svg';
-import blue_little_star from '../assets/blue_star_little.svg';
-import grey_big_star from '../assets/big_grey_star.svg';
-import grey_little_star from '../assets/little_grey_star.svg';
+import navy_star_big from '../assets/navy_star_big.svg';
+import navy_star_small from '../assets/navy_star_small.svg';
+import teal_star_big from '../assets/teal_star_big.svg';
+import teal_star_small from '../assets/teal_star_small.svg';
+import pink_circle_big from '../assets/pink_circle_big.svg';
+import pink_circle_small from '../assets/pink_circle_small.svg';
 
 const starTypes = [
-  { src: pink_big_star, count: 5 },
-  { src: pink_little_star, count: 3 },
-  { src: yellow_big_star, count: 5 },
-  { src: yellow_little_star, count: 3 },
-  { src: blue_big_star, count: 5 },
-  { src: blue_little_star, count: 3 },
-  { src: grey_big_star, count: 4 },
-  { src: grey_little_star, count: 6 },
+  { src: navy_star_big, count: 6 },
+  { src: navy_star_small, count: 5 },
+  { src: teal_star_big, count: 6 },
+  { src: teal_star_small, count: 5 },
+  { src: pink_circle_big, count: 6 },
+  { src: pink_circle_small, count: 8 },
 ];
 
 interface SkyScatterProps {
@@ -24,28 +20,28 @@ interface SkyScatterProps {
 }
 
 const getIconWidth = (iconSrc: string, width : number) => {
-  if (iconSrc === pink_big_star || iconSrc === yellow_big_star || iconSrc === blue_big_star) {
+  if (iconSrc === navy_star_big || iconSrc === teal_star_big) {
     if (width <= 1440 && width > 768) {
-      return width * 0.03;
+      return width * 0.015;
     } else if (width > 1440) {
       return 35;
     }
     return width * 0.05;
-  } else if (iconSrc === pink_little_star || iconSrc === yellow_little_star || iconSrc === blue_little_star) {
+  } else if (iconSrc === navy_star_small || iconSrc === teal_star_small) {
     if (width <= 1440 && width > 768) {
-      return width * 0.018;
+      return width * 0.009;
     } else if (width > 1440) {
       return 26;
     }
     return width * 0.03;
-  } else if (iconSrc === grey_big_star) {
+  } else if (iconSrc === pink_circle_big) {
     if (width <= 1440 && width > 768) {
       return width * 0.02;
     } else if (width > 1440) {
       return 32;
     }
     return width * 0.05;
-  } else if (iconSrc === grey_little_star) {
+  } else if (iconSrc === pink_circle_small) {
     if (width <= 1440 && width > 768) {
       return width * 0.01;
     } else if (width > 1440) {
@@ -71,7 +67,7 @@ const getAvoidedAreas = (containerRef: React.RefObject<HTMLDivElement>) => {
 
   if (containerRef.current) {
     // Example: Add specific elements to avoid
-    const elementsToAvoid = document.querySelectorAll('.fullName, .tag, .social-icon'); // Adjust the selector
+    const elementsToAvoid = document.querySelectorAll('.welcome, .tag'); // Adjust the selector
     elementsToAvoid.forEach(el => {
       const rect = (el as HTMLElement).getBoundingClientRect();
       avoidedAreas.push({

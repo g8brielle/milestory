@@ -1,40 +1,66 @@
 :root {
-    --bg-color: #233464; /* Darkest Blue */
-    --light-blue: #84ABE6; /* Lightest Blue */
-    --bright-yellow: #FBD585; /* Bright Yellow*/
-    --hover-bright-yellow: #fef2da;
-    --dark-purple: #445584; /* Dark Purple */
-    --medium-blue: #6d8dc6; /* Medium Blue */
-    --light-purple: #94ADF1;
-    --pink: #FFB6C1;
+    --bg-color: #FFEBD8; 
+    --dark-gray: #50514F;
+    --baby-pink: #FFC5C5;
+    --light-green: #C7DCA7; 
+    --teal: #89B9AD;
+    --navy-blue: #465775; 
+    --dark-green: #7C8B64; 
   }
 
 @font-face {
-    font-family: 'Modak';
-    src: url('assets/Modak-Regular.ttf');
+    font-family: 'Arvo';
+    src: url('assets/Arvo-Regular.ttf');
 }
 
-@font-face {
-    font-family: 'Mochiy Pop One';
-    src: url('assets/MochiyPopOne-Regular.ttf');
+.navbar-container {
+    font-family: 'Arvo';
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    padding: 1.5rem;
 }
-
-@font-face {
-    font-family: 'Kiwi Maru';
-    src: url('assets/KiwiMaru-Regular.ttf');
+  
+.navbar-logo a {
+    color: var(--dark-gray);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.5rem;
 }
-
-.fullName {
+  
+.navbar-links {
+    list-style: none;
+    display: flex;
+    margin: auto;
+    justify-content: flex-end;
+    margin-right: 5%;
+    gap: 3rem;
+}
+  
+.navbar-links li a {
     color: white;
-    font-family: 'Modak';
-    font-size: calc(2rem + 2vw);
+    text-decoration: none;
+    font-size: 1rem;
+    background-color: var(--navy-blue);
+    padding: 10px;
+}
+  
+.navbar-links li a:hover {
+    color: #ddd;
+}
+
+.welcome {
+    color: var(--dark-gray);
+    font-family: 'Arvo';
+    font-size: 2rem;
     letter-spacing: .3rem;
 }
 
 .tag {
-    font-family: 'Mochiy Pop One';
-    font-size: calc((2rem + 2vw) * 0.4);
-    color: white;
+    font-family: 'Arvo';
+    font-size: 1rem;
+    color: var(--dark-gray);
     letter-spacing: .1rem;
 }
 
@@ -52,7 +78,7 @@
 }
 
 .top-border {
-    border-top: 40px solid var(--light-blue);
+    border-top: 40px solid var(--light-green);
 }
 
 .custom-shape-divider-top-1723951671 {
@@ -72,16 +98,11 @@
 }
 
 .custom-shape-divider-top-1723951671 .shape-fill {
-    fill: var(--light-blue);
+    fill: var(--light-green);
 }
 
 .banner-info {
     height: 50vh;
-}
-
-.info, .profile-container{
-    height: 50%;
-    width: 100%;
 }
 
 .info {
@@ -91,115 +112,88 @@
     justify-content: center; 
 }
 
-.linkedin, .github, .mail {
-    stroke: var(--light-purple);
-    transition: stroke 0.3s ease;
-}
-
-.linkedin:hover, .github:hover, .mail:hover {
-    stroke: var(--medium-blue);
-}
-
-.profile-pic {
-    border-radius: 50%;
-    height: 100%;
-    border: 8px solid white;
-}
-
-.about-me {
+.months-section {
     position: relative;
-    background-color: var(--medium-blue);
+    background-color: var(--teal);
+    padding-top: 100px;
 }
 
-.tech-skills {
+.months-section .container {
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
+    justify-content: center;
+    align-items: center;
 }
 
-.tech-skills .container {
-    width: 80%;
-    height: 100%;
-    background-color: var(--bright-yellow);
-    border-radius: 20%;
+.month-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
-.about-me h1 {
-    font-family: 'Mochiy Pop One';
-    color: white;
+.month-checkbox {
+    width: 50px;          
+    height: 50px;
+    border-radius: 50%; 
+    border: solid 1px white;
+    cursor: pointer;
 }
 
-.about-me p {
-    color: white;
-    font-size: 1.05rem;
-    font-family: 'Kiwi Maru';
+.month-box {
+    cursor: pointer;
+    font-family: 'Arvo';
+    color: var(--navy-blue);
+    background-color: white;
+    width: 350px;
+    margin: 10px;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    padding: 10px;
 }
 
-.about-me a {
-    color: var(--bright-yellow);
-    text-decoration: none;
-    font-family: 'Kiwi Maru';
+.month-box:hover {
+    background-color: var(--teal);
+    border: solid 1px white;
+}
+
+.milestone-page-container {
     position: relative;
-    font-size: 1.3rem;
-    transition: color 0.3s ease;
-}
-
-.about-me a:hover, .about-me a:hover .arrow-right {
-    color: var(--hover-bright-yellow);
-    fill: var(--hover-bright-yellow);
-}
-
-.tech-skills p {
-    font-family: 'Mochiy Pop One';
-    color: var(--dark-purple);
-    font-size: 1.05rem;
-}
-
-.tech-skills p:hover {
-    color: var(--light-purple);
-}
-
-.learn-more-container {
-    position: relative;
-    background-color: var(--dark-purple);
+    background-color: var(--dark-green);
     border-radius: 30px;
     height: 100%;
     width: 90%;
     padding: 20px; 
 }
 
-.learn-more {
-    background-color: var(--medium-blue);
+.milestone-page {
+    background-color: var(--bg-color);
     padding: 30px;
 }
 
-.learn-more-divider {
+.milestone-page-divider {
     width: 20%; 
     height: 6px; 
-    background-color: var(--bright-yellow); 
+    background-color: var(--light-green); 
     margin: 30px auto; 
 }
 
-.learn-more h1 {
-    font-family: 'Mochiy Pop One';
+.milestone-page h1 {
+    font-family: 'Arvo';
+    letter-spacing: 3px;
     color: white;
     font-size: 32px;
     margin-top: 30px;
 }
 
-.learn-more p {
-    font-family: 'Kiwi Maru';
+.milestone-page p {
+    font-family: 'Arvo';
     color: white;
     width: 60%;
 }
 
-.orgs {
-    color: var(--pink)
-}
-
 .arrow-left {
-    stroke: var(--bright-yellow);
+    stroke: white;
     position: absolute;
     top: 30px;
     left: 40px;
@@ -207,19 +201,13 @@
 }
 
 .arrow-left:hover {
-    stroke: var(--hover-bright-yellow);
+    stroke: var(--light-green);
 }
 
 .projects .container .row-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     gap:15px;
-}
-
-.my-projects {
-    font-family: 'Mochiy Pop One';
-    color: var(--dark-purple);
-    font-size: 1.7rem;
 }
 
 .project-card {
@@ -237,7 +225,7 @@
 }
 
 .project-card h1 {
-    font-family: 'Mochiy Pop One';
+    font-family: 'Arvo';
     font-size: 1.5rem;
     margin-bottom: 40px;
 }
@@ -245,7 +233,7 @@
 .project-card a {
     color: var(--bright-yellow);
     text-decoration: none;
-    font-family: 'Kiwi Maru';
+    font-family: 'Arvo';
     position: relative;
     font-size: 18px;
     transition: color 0.3s ease;
@@ -257,27 +245,12 @@
 }
 
 .project-card p {
-    font-family: 'Kiwi Maru';
+    font-family: 'Arvo';
     width: 100%;
-}
-
-.arrow-right {
-    margin-bottom: 3px;
-    fill: var(--bright-yellow);
-    transition: fill 0.3s ease;
-}
-  
-.divider {
-    width: 50%; 
-    height: 6px; 
-    background-color: var(--dark-purple); 
-    margin: 50px auto 20px auto; 
 }
 
 .footer, .footer p {
     background-color: var(--bg-color);
-    color: var(--light-purple);
-    font-family: 'Mochiy Pop One';
 }
   
 
