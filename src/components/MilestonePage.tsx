@@ -2,7 +2,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import MilestoneCard from "./MilestoneCard";
 import { useState } from "react";
 import AddMilestone from "./AddMilestone";
-import MilestoneLog from "./MilestoneLog";
 
 const MilestonePage = () => {
   const { month } = useParams() || "";

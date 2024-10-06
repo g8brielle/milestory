@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Modal, Button, Container, Row, Col } from "react-bootstrap";
-import MonthDropdown from "./MonthDropdown";
+import { Modal } from "react-bootstrap";
 
 interface MilestoneLogProps {
   isPopupOpen: boolean;
