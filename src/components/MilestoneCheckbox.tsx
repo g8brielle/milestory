@@ -1,18 +1,19 @@
 import { useState } from "react";
 import MilestoneLog from "./MilestoneLog";
 
-interface MilestoneCheckBoxProps {
-    month: any;
+interface MilestoneCheckboxProps {
+  onCheck: () => void;
+  onNoteSubmit: (note: string) => void;  // New prop to pass note to parent (MilestoneCard)
 }
 
-const MilestoneCheckbox: React.FC<MilestoneCheckBoxProps> = ({ month }) =>  {
+function MilestoneCheckbox({ onCheck, onNoteSubmit }: MilestoneCheckboxProps) {
+  const [isChecked, setIsChecked] = useState(false);
   const [isLogPopupOpen, setLogPopupOpen] = useState(false);
 
   const handleLogClosePopup = () => {
     setLogPopupOpen(false);
   };
 
-  const [isChecked, setIsChecked] = useState(false);
   const circleStyle = {
     width: "40px",
     height: "40px",
@@ -24,18 +25,24 @@ const MilestoneCheckbox: React.FC<MilestoneCheckBoxProps> = ({ month }) =>  {
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
+    onCheck();
     if (!isChecked) {
-        setLogPopupOpen(true);
+      setLogPopupOpen(true);
     }
+  };
+
+  const handleNoteSubmit = (note: string) => {
+    onNoteSubmit(note);  // Pass the note to the parent component (MilestoneCard)
+    setLogPopupOpen(false);  // Close the popup after submitting the note
   };
 
   return (
     <div className="checkbox-container">
       <div onClick={handleCheckboxChange} style={circleStyle}></div>
       <MilestoneLog
-        age={month}
         isPopupOpen={isLogPopupOpen}
         handleClosePopup={handleLogClosePopup}
+        onSubmitNote={handleNoteSubmit}
       />
     </div>
   );

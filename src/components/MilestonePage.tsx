@@ -9,18 +9,9 @@ const MilestonePage = () => {
   const navigate = useNavigate();
 
   const [isAddPopupOpen, setAddPopupOpen] = useState(false);
-  const [isLogPopupOpen, setLogPopupOpen] = useState(false);
 
   const handleAddClosePopup = () => {
     setAddPopupOpen(false);
-  };
-
-  const handleLogOpenPopup = () => {
-    setLogPopupOpen(true);
-  };
-
-  const handleLogClosePopup = () => {
-    setLogPopupOpen(false);
   };
 
   const [month1_milestones, setMonth1Milestones] = useState<any[]>([
@@ -155,12 +146,7 @@ const MilestonePage = () => {
                   <div className="row-container">
                     {month1_milestones.map((milestone, index) => (
                       <div key={index} className="milestone-card">
-                        <MilestoneCard
-                          milestone={milestone.milestone}
-                          date={milestone.date}
-                          note={milestone.note}
-                          age={month}
-                        />
+                        <MilestoneCard milestone={milestone.milestone} />
                       </div>
                     ))}
                     ;
@@ -209,12 +195,7 @@ const MilestonePage = () => {
                   <div className="row-container">
                     {month2_milestones.map((milestone, index) => (
                       <div key={index} className="milestone-card">
-                        <MilestoneCard
-                          milestone={milestone.milestone}
-                          date={milestone.date}
-                          note={milestone.note}
-                          age={month}
-                        />
+                        <MilestoneCard milestone={milestone.milestone} />
                       </div>
                     ))}
                     ;
@@ -261,14 +242,9 @@ const MilestonePage = () => {
               <div className="milestones text-center py-5">
                 <div className="container">
                   <div className="row-container">
-                    {month1_milestones.map((milestone, index) => (
+                    {month3_milestones.map((milestone, index) => (
                       <div key={index} className="milestone-card">
-                        <MilestoneCard
-                          milestone={milestone.milestone}
-                          date={milestone.date}
-                          note={milestone.note}
-                          age={month}
-                        />
+                        <MilestoneCard milestone={milestone.milestone} />
                       </div>
                     ))}
                     ;
