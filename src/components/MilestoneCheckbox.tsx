@@ -2,11 +2,10 @@ import { useState } from "react";
 import MilestoneLog from "./MilestoneLog";
 
 interface MilestoneCheckboxProps {
-  onCheck: () => void;
-  onNoteSubmit: (note: string) => void;  // New prop to pass note to parent (MilestoneCard)
+  onNoteSubmit: (note: string, date: string) => void;  // New prop to pass note to parent (MilestoneCard)
 }
 
-function MilestoneCheckbox({ onCheck, onNoteSubmit }: MilestoneCheckboxProps) {
+function MilestoneCheckbox({ onNoteSubmit }: MilestoneCheckboxProps) {
   const [isChecked, setIsChecked] = useState(false);
   const [isLogPopupOpen, setLogPopupOpen] = useState(false);
 
@@ -25,14 +24,13 @@ function MilestoneCheckbox({ onCheck, onNoteSubmit }: MilestoneCheckboxProps) {
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
-    onCheck();
     if (!isChecked) {
       setLogPopupOpen(true);
     }
   };
 
-  const handleNoteSubmit = (note: string) => {
-    onNoteSubmit(note);  // Pass the note to the parent component (MilestoneCard)
+  const handleNoteSubmit = (note: string, date: string) => {
+    onNoteSubmit(note, date);  // Pass the note to the parent component (MilestoneCard)
     setLogPopupOpen(false);  // Close the popup after submitting the note
   };
 
