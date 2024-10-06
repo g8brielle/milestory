@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
 
 interface MilestoneLogProps {
   isPopupOpen: boolean;
   handleClosePopup: () => void;
-  onSubmitNote: (note: string) => void;  // New prop to send the note back
+  onSubmitNote: (note: string, date: string) => void;  // New prop to send the note back
 }
 
 const MilestoneLog: React.FC<MilestoneLogProps> = ({
@@ -13,6 +13,14 @@ const MilestoneLog: React.FC<MilestoneLogProps> = ({
   onSubmitNote
 }) => {
   const [notes, setNotes] = useState("");
+  const [date, setDate] = useState("");
+
+  useEffect(() => {
+    if (!date) {
+      const currentDate = new Date().toISOString().split("T")[0]; // Format YYYY-MM-DD
+      setDate(currentDate);
+    }
+  }, [date]);
 
   const handleNotesChange = (event: {
     target: { value: React.SetStateAction<string> };
@@ -20,14 +28,19 @@ const MilestoneLog: React.FC<MilestoneLogProps> = ({
     setNotes(event.target.value);
   };
 
+  const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setDate(event.target.value);
+  };
+
   const handleSubmit = (event: { preventDefault: () => void }) => {
     event.preventDefault();
-    onSubmitNote(notes);  // Pass the note back to the parent on submit
+    onSubmitNote(notes, date);  // Pass the note back to the parent on submit
     handlePopupCloseAndClear();  // Close the modal after submitting
   };
 
   const handlePopupCloseAndClear = () => {
     setNotes("");
+    setDate("");
     handleClosePopup();
   };
 
@@ -49,6 +62,15 @@ const MilestoneLog: React.FC<MilestoneLogProps> = ({
                     value={notes}
                     onChange={handleNotesChange}
                     placeholder="Enter note here"
+                    style={{ width: "100%", height: "40px" }}
+                  />
+                </div>
+                <div className="d-flex justify-content-center align-items-center gap-4 m-3">
+                  <p>Date:</p>
+                  <input
+                    type="date"
+                    value={date}
+                    onChange={handleDateChange}
                     style={{ width: "100%", height: "40px" }}
                   />
                 </div>

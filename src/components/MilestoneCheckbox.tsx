@@ -15,7 +15,7 @@ function MilestoneCheckbox({ onCheck, onNoteSubmit }: MilestoneCheckboxProps) {
   };
 
   const circleStyle = {
-    width: "40px",
+    width: "40px", 
     height: "40px",
     borderRadius: "50%",
     border: "solid 3px var(--navy-blue)",

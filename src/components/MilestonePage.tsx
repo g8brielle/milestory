@@ -25,7 +25,17 @@ const MilestonePage = () => {
       note: "She smiled for the first time.",
     },
   ]);
-  const [month2_milestones, setMonth2Milestones] = useState<any[]>([]);
+  const [month2_milestones, setMonth2Milestones] = useState<any[]>([
+    {milestone: "Calms down when spoken to or picked up"},
+    {milestone: "Looks at your face"},
+    {milestone: "Seems happy to see you when you walk up to her"},
+    {milestone: "Makes sounds other than crying"},
+    {milestone: "Reacts to loud sounds"},
+    {milestone: "Watches as you move"},
+    {milestone: "Looks at a toy for several seconds"},
+    {milestone: "Holds head up when on tummy"},
+    {milestone: "Opens hands briefly"}
+  ]);
   const [month3_milestones, setMonth3Milestones] = useState<any[]>([]);
   const [month4_milestones, setMonth4Milestones] = useState<any[]>([]);
   const [month5_milestones, setMonth5Milestones] = useState<any[]>([]);

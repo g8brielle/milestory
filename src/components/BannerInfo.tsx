@@ -7,7 +7,7 @@ const BannerInfo = () => {
                 <div className='info'>
                     <div className='welcome-tag'>
                         <h1 className='welcome'>WELCOME NADIA</h1>
-                        <p className='tag'>today Gabby is 5 months</p>
+                        <p className='tag'>today Gabby is 2 months</p>
                     </div>
                 </div>
             </div>
