@@ -13,7 +13,7 @@ const Months : React.FC<MonthsProps> = ({ age }) => {
         navigate(`/month/${month}`);
     };
 
-    const months = [1,2,3,4,5,6,7,8,9,10,11,12];
+    const months = [2,3,4,5,6,7,8,9,10,11,12];
 
     return (
         <div className='months-section pb-5'>

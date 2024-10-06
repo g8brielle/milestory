@@ -56,6 +56,19 @@
     cursor: pointer;
 }
 
+.navbar-links p {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    background-color: var(--navy-blue);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.navbar-links p:hover {
+    background-color: var(--dark-green);
+}
+
 .popup-container {
     position: absolute; 
     background-color: white;

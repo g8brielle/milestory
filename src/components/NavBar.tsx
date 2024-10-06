@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles.css";
 import ProfilePopup from "./ProfilePopup";
+import { Modal } from "react-bootstrap";
 
 interface NavBarProps {
     onAgeSubmit: (age: string) => void;
@@ -9,14 +10,23 @@ interface NavBarProps {
 
 const NavBar : React.FC<NavBarProps> = ({ onAgeSubmit, onNamesSubmit }) => {
   const [isPopupOpen, setPopupOpen] = useState(false);
+  const [isReminderPopupOpen, setReminderPopupOpen] = useState(false);
 
   const handleOpenPopup = () => {
     setPopupOpen(true);
   };
 
+  const handleOpenReminderPopup = () => {
+    setReminderPopupOpen(true);
+  }
+
   const handleClosePopup = () => {
     setPopupOpen(false);
   };
+
+  const handleCloseReminderPopup = () => {
+    setReminderPopupOpen(false);
+  }
 
   const handleAgeSubmit = (age: string) => {
     onAgeSubmit(age);  // Pass the age to the parent component (BannerInfo)
@@ -60,12 +70,50 @@ const NavBar : React.FC<NavBarProps> = ({ onAgeSubmit, onNamesSubmit }) => {
                     />
                   </svg>
                 </a>
+                <p onClick={handleOpenReminderPopup}>view reminders</p>
               </div>
             </div>
             <ProfilePopup isPopupOpen={isPopupOpen} handleClosePopup={handleClosePopup} onAgeSubmit={handleAgeSubmit} onNamesSubmit={handleNamesSubmit}/>
           </div>
         </div>
       </nav>
+
+      <Modal show={isReminderPopupOpen} onHide={handleCloseReminderPopup}>
+        <Modal.Header closeButton>
+          <Modal.Title>Appointment Reminders</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <ul>
+            <li>
+              <strong>2-3 days after birth: </strong>First well baby checkup
+            </li>
+            <li>
+              <strong>1 month: </strong> Well baby checkup
+            </li>
+            <li>
+              <strong>2 months:</strong> Well baby checkup
+              <br />
+              <span>Recommended immunizations:</span>
+              <ul>
+                <li>Pneumococcal (PCV)</li>
+                <li>Rotavirus (RV), oral vaccine (mouth drops)</li>
+                <li>Haemophilus influenzae type b (Hib)</li>
+                <li>Polio (IPV)</li>
+                <li>Diphtheria/Tetanus/Pertussis (DTaP)</li>
+                <li>
+                  Second dose of hepatitis B (if baby didn’t get it at the
+                  one-month appointment)
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>4 months:</strong> Well baby checkup
+              <br />
+              <span>Recommended second dose of 2 month immunizations</span>
+            </li>
+          </ul>
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };
