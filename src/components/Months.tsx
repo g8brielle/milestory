@@ -2,7 +2,11 @@ import { useNavigate } from 'react-router-dom';
 import Checkbox from './Checkbox';
 import '../styles.css';
 
-const Months = () => {
+interface MonthsProps {
+    age: string,
+}
+
+const Months : React.FC<MonthsProps> = ({ age }) => {
     const navigate = useNavigate();
 
     const handleMonthClick = (month: any) => {
@@ -14,14 +18,21 @@ const Months = () => {
     return (
         <div className='months-section pb-5'>
             <div className='container pt-4 text-center'>
-                {months.map((month) => (
-                    <div className='month-container' key={month}> 
-                        <Checkbox />
-                        <div className='month-box' onClick={() => handleMonthClick(month)}>
-                            Month {month}
+                {months.map((month) => {
+                    let isChecked = false;
+                    if (month <= parseInt(age)) {
+                        isChecked = true;
+                    }
+                    
+                    return (
+                        <div className='month-container' key={month}> 
+                            <Checkbox isChecked={isChecked} />
+                            <div className='month-box' onClick={() => handleMonthClick(month)}>
+                                Month {month}
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    );
+                })};
             </div>
         </div>
     );

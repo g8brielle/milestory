@@ -13,6 +13,11 @@
     src: url('assets/Arvo-Regular.ttf');
 }
 
+.nav-bar {
+    top: 0;
+    left: 0;
+}
+
 .navbar-container {
     font-family: 'Arvo';
     display: flex;
@@ -28,7 +33,7 @@
     text-decoration: none;
     font-size: 1.5rem;
 }
-  
+
 .navbar-links {
     list-style: none;
     display: flex;
@@ -37,18 +42,18 @@
     margin-right: 5%;
     gap: 3rem;
 }
-  
-.navbar-links a p{
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    background-color: var(--navy-blue);
+
+.navbar-links a path{
+    stroke: var(--navy-blue);
     padding: 10px;
-    cursor: pointer;
 }
   
-.navbar-links a p:hover {
-    background-color: var(--dark-green);
+.navbar-links a:hover svg path{
+    stroke: var(--dark-green);
+} 
+
+.navbar-links a:hover {
+    cursor: pointer;
 }
 
 .popup-container {
@@ -61,6 +66,14 @@
 }
 
 .log-popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.milestory-profile-popup {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -102,6 +115,7 @@
     font-family: 'Arvo';
     font-size: 2rem;
     letter-spacing: .3rem;
+    text-transform: uppercase;
 }
 
 .tag {
