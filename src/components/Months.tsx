@@ -5,10 +5,6 @@ import '../styles.css';
 const Months = () => {
     const navigate = useNavigate();
 
-    const handleLearnMoreClick = () => {
-        navigate('/milestone-page');
-    };
-
     const handleMonthClick = (month: any) => {
         navigate(`/month/${month}`);
     };

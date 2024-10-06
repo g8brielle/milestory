@@ -6,13 +6,16 @@ interface MilestoneCardProps {
     milestone: string;
     date: string;
     note: string;
+    age: any;
 }
 
-const MilestoneCard : React.FC<MilestoneCardProps> = ({ className , milestone, date, note }) => {
+const MilestoneCard : React.FC<MilestoneCardProps> = ({ className , milestone, date, note, age }) => {
   return (
     <div>
       <div className='d-flex align-items-center justify-content-center gap-3'>
-        <MilestoneCheckbox />
+        <MilestoneCheckbox 
+          month={age}
+        />
         <h1>Milestone: {milestone}</h1>
       </div>
       <p>Acheived On:<br></br>{date}</p>

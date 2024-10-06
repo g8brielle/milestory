@@ -1,24 +1,36 @@
+import { useState } from 'react';
 import '../styles.css';
+import MilestoneLog from './MilestoneLog';
 
 const NavBar = () => {
+    const [isPopupOpen, setPopupOpen] = useState(false);
+    const handleOpenPopup = () => {
+        setPopupOpen(true);
+    };
+
+    const handleClosePopup = () => {
+        setPopupOpen(false);
+    };
+
   return (
-    <nav>
-        <div className='navbar-container'>
-            <div className='row align-items-center w-100'>
-                <div className='col-2'>
-                    <div className="navbar-logo">
-                        <a href="/">Milestory</a>
+    <div>
+        <nav>
+            <div className='navbar-container'>
+                <div className='row align-items-center w-100'>
+                    <div className='col-2'>
+                        <div className="navbar-logo">
+                            <a href="/">Milestory</a>
+                        </div>
+                    </div>
+                    <div className='col-10'>
+                        <div className="navbar-links">
+                            <a><p>view reminders</p></a>
+                        </div>
                     </div>
                 </div>
-                <div className='col-10'>
-                    <ul className="navbar-links">
-                        <li><a href="#home">log a milestory</a></li>
-                        <li><a href="#about">view reminders</a></li>
-                    </ul>
-                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
   );
 };
 

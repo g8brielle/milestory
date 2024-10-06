@@ -6,7 +6,7 @@
     --teal: #89B9AD;
     --navy-blue: #465775; 
     --dark-green: #7C8B64; 
-  }
+}
 
 @font-face {
     font-family: 'Arvo';
@@ -38,16 +38,63 @@
     gap: 3rem;
 }
   
-.navbar-links li a {
+.navbar-links a p{
     color: white;
     text-decoration: none;
     font-size: 1rem;
     background-color: var(--navy-blue);
     padding: 10px;
+    cursor: pointer;
 }
   
-.navbar-links li a:hover {
-    color: #ddd;
+.navbar-links a p:hover {
+    background-color: var(--dark-green);
+}
+
+.popup-container {
+    position: absolute; 
+    background-color: white;
+    color: var(--dark-gray);
+    align-self: center;
+    width: 100%;
+    font-family: 'Arvo';
+}
+
+.log-popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.log-submit button {
+    color: white;
+    width: 100px;
+    text-decoration: none;
+    font-size: 1rem;
+    background-color: var(--navy-blue);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.log-submit button:hover {
+    background-color: var(--dark-green);
+}
+
+.close-button {
+    background: none;
+    border: none;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--navy-blue);
+    padding-bottom: 1rem;
+    transition: color 0.1s;
+    padding-left: 1rem;
+}
+
+.close-button:hover {
+    color: var(--dark-green);
 }
 
 .welcome {
@@ -182,6 +229,21 @@
     font-family: 'Arvo';
     color: white;
     width: 60%;
+}
+
+.add-milestone-button a p, .log-milestone-button a p{
+    margin: auto;
+    color: white;
+    width: 200px;
+    text-decoration: none;
+    font-size: 1rem;
+    background-color: var(--navy-blue);
+    padding: 10px;
+    cursor: pointer;
+}
+
+.add-milestone-button a p:hover, .log-milestone-button a p:hover {
+    background-color: var(--light-green);
 }
 
 .arrow-left {
