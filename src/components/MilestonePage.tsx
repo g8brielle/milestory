@@ -13,18 +13,6 @@ const MilestonePage = () => {
     setAddPopupOpen(false);
   };
 
-  const [month1_milestones, setMonth1Milestones] = useState<any[]>([
-    {
-      milestone: "Head Movement",
-      date: "9/25/2024",
-      note: "She lifted her head during tummy time.",
-    },
-    {
-      milestone: "First Smile",
-      date: "10/14/2024",
-      note: "She smiled for the first time.",
-    },
-  ]);
   const [month2_milestones, setMonth2Milestones] = useState<any[]>([
     {milestone: "Calms down when spoken to or picked up"},
     {milestone: "Looks at your face"},
@@ -57,12 +45,7 @@ const MilestonePage = () => {
 
   const updateMilestones = (newMilestone: any) => {
     // Based on the month, update the corresponding milestone array
-    if (month === "1") {
-      setMonth1Milestones((prevMilestones) => [
-        ...prevMilestones,
-        newMilestone,
-      ]);
-    } else if (month === "2") {
+    if (month === "2") {
       setMonth2Milestones((prevMilestones) => [
         ...prevMilestones,
         newMilestone,
@@ -122,55 +105,6 @@ const MilestonePage = () => {
 
   const renderMilestoneContent = () => {
     switch (month) {
-      case "1":
-        return (
-          <div className="milestone-page text-center d-flex justify-content-center align-items-center">
-            <div className="milestone-page-container">
-              <a href="" onClick={handleLearnMoreClick}>
-                <svg
-                  className="arrow-left"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 48 48"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M38 24H10M10 24L24 38M10 24L24 10"
-                    stroke-width="4"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-              <h1 className="mb-3">Month {month}</h1>
-              <div className="milestone-page-divider"></div>
-              <div className="add-milestone-button">
-                <a onClick={handleAddMilestone}>
-                  <p>add a milestone</p>
-                </a>
-              </div>
-              <div className="milestones text-center py-5">
-                <div className="container">
-                  <div className="row-container">
-                    {month1_milestones.map((milestone, index) => (
-                      <div key={index} className="milestone-card">
-                        <MilestoneCard milestone={milestone.milestone} />
-                      </div>
-                    ))}
-                    ;
-                  </div>
-                </div>
-              </div>
-              <AddMilestone
-                age={month}
-                isPopupOpen={isAddPopupOpen}
-                handleClosePopup={handleAddClosePopup}
-                addMilestone={updateMilestones}
-              />
-            </div>
-          </div>
-        );
       case "2":
         return (
           <div className="milestone-page text-center d-flex justify-content-center align-items-center">
@@ -196,7 +130,7 @@ const MilestonePage = () => {
               <div className="milestone-page-divider"></div>
               <div className="add-milestone-button">
                 <a onClick={handleAddMilestone}>
-                  <p>add a milestone</p>
+                  <p>add a custom milestone</p>
                 </a>
               </div>
               <div className="milestones text-center py-5">
@@ -245,7 +179,7 @@ const MilestonePage = () => {
               <div className="milestone-page-divider"></div>
               <div className="add-milestone-button">
                 <a onClick={handleAddMilestone}>
-                  <p>add a milestone</p>
+                  <p>add a custom milestone</p>
                 </a>
               </div>
               <div className="milestones text-center py-5">

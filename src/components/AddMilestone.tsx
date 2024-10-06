@@ -60,7 +60,7 @@ const AddMilestone: React.FC<AddMilestoneProps> = ({
             </button>
             <form onSubmit={handleSubmit}>
               <div className="log-popup">
-                <h1>Add a Milestone</h1>
+                <h1>Add a custom Milestone</h1>
                 <div className="d-flex justify-content-center align-items-center gap-4 m-3">
                   <p>age: {age} Month</p>
                 </div>
@@ -70,16 +70,6 @@ const AddMilestone: React.FC<AddMilestoneProps> = ({
                     type="text"
                     value={milestoneInputValue}
                     onChange={handleMilestoneInputChange}
-                    placeholder="Enter text here"
-                    style={{ width: "100%", height: "40px" }}
-                  />
-                </div>
-                <div className="d-flex justify-content-center align-items-center gap-4 m-3">
-                  <p>target completion date:</p>
-                  <input
-                    type="date"
-                    value={date}
-                    onChange={handleDateChange}
                     placeholder="Enter text here"
                     style={{ width: "100%", height: "40px" }}
                   />
